@@ -1,0 +1,25 @@
+using System;
+
+namespace з1
+{
+    class Program
+    {
+        static void Main()
+        {
+            System.Console.Write("введите число: ");
+            int N = int.Parse(Console.ReadLine());
+            int i = 0;
+            int sum = 0;
+            while (i <= N)
+            {
+             if (i%3 == 0)
+             {
+                sum = sum + i;
+                System.Console.WriteLine(i); //2.	Выводит все числа от 1 до N, кратные 
+             }   
+             i++;
+            }
+            System.Console.WriteLine(sum); // 3.	Находит сумму этих чисел
+        }
+    }
+}
