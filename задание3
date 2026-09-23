@@ -1,0 +1,138 @@
+using System;
+
+namespace з3
+{
+    class Program
+    {
+        static void Main()
+        {
+            string[] tasks = new string[10];
+            bool[] isDone = new bool[10];
+            int taskCount = 0;
+            int choice = 0;
+
+            do
+            {
+                System.Console.WriteLine("\n--- МЕНЕДЖЕР ЗАДАЧ ---");
+                System.Console.WriteLine("1. Добавить задачу");
+                System.Console.WriteLine("2. Показать все задачи");
+                System.Console.WriteLine("3. Отметить задачу как выполненную");
+                System.Console.WriteLine("4. Удалить задачу");
+                System.Console.WriteLine("5. Выход");
+                System.Console.Write("Выберите действие: ");
+
+                try
+                {
+                    choice = int.Parse(System.Console.ReadLine());
+                }
+                catch (System.FormatException)
+                {
+                    System.Console.WriteLine("Ошибка! Введите число от 1 до 5.");
+                    continue;
+                }
+
+                switch (choice)
+                {
+                    case 1:
+                        // Добавление задачи
+                        if (taskCount >= 10)
+                        {
+                            System.Console.WriteLine("Список задач переполнен! (Максимум 10)");
+                        }
+                        else
+                        {
+                            System.Console.Write("Введите описание задачи: ");
+                            tasks[taskCount] = System.Console.ReadLine();
+                            isDone[taskCount] = false;
+                            taskCount++;
+                            System.Console.WriteLine("Задача успешно добавлена!"); // работает
+                        }
+                        break;
+
+                    case 2:
+                        // Показ всех задач
+                        if (taskCount == 0)
+                        {
+                            System.Console.WriteLine("Список задач пуст.");
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("\nВаши задачи:");
+                            for (int i = 0; i < taskCount; i++)
+                            {
+                                string status = isDone[i] ? "[Выполнено]" : "[В процессе]";
+                                System.Console.WriteLine($"{i + 1}. {tasks[i]} {status}");
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        // Отметка как выполненной
+                        if (taskCount == 0)
+                        {
+                            System.Console.WriteLine("Список задач пуст.");
+                        }
+                        else
+                        {
+                            System.Console.Write($"Введите номер задачи (1-{taskCount}): ");
+                            int num = int.Parse(System.Console.ReadLine()) - 1;
+
+                            if (num >= 0 && num < taskCount)
+                            {
+                                isDone[num] = true;
+                                System.Console.WriteLine("Задача отмечена как выполненная!"); // работает
+                            }
+                            else
+                            {
+                                System.Console.WriteLine("Некорректный номер задачи!");
+                            }
+                        }
+                        break;
+
+                    case 4:
+                        // Удаление задачи со сдвигом влево
+                        if (taskCount == 0)
+                        {
+                            System.Console.WriteLine("Список задач пуст.");
+                        }
+                        else
+                        {
+                            System.Console.Write($"Введите номер задачи для удаления (1-{taskCount}): ");
+                            int delIndex = int.Parse(System.Console.ReadLine()) - 1;
+
+                            if (delIndex >= 0 && delIndex < taskCount)
+                            {
+                                // Сдвигаем эл-ты влево
+                                for (int i = delIndex; i < taskCount - 1; i++)
+                                {
+                                    tasks[i] = tasks[i + 1];
+                                    isDone[i] = isDone[i + 1];
+                                }
+
+                                // Очистка последнего эл-та
+                                tasks[taskCount - 1] = null;
+                                isDone[taskCount - 1] = false;
+                                taskCount--;
+
+                                System.Console.WriteLine("Задача успешно удалена!"); // работает
+                            }
+                            else
+                            {
+                                System.Console.WriteLine("Некорректный номер задачи!");
+                            }
+                        }
+                        break;
+
+                    case 5:
+                        System.Console.WriteLine("Выход из программы...");
+                        break;
+
+                    default:
+                        System.Console.WriteLine("Неверный пункт меню!");
+                        break;
+                }
+
+            } while (choice != 5);
+        }
+    }
+}
