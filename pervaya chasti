@@ -1,0 +1,1198 @@
+//1
+// 1.1.
+// using System;
+// namespace 1
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             Console.WriteLine("шаг 1");
+//             Console.WriteLine("шаг 2");
+//             Console.WriteLine("шаг 3");
+            
+//         }
+//     }
+// }
+//работает 
+
+// 1.2.
+// namespace 2
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             int x = 5;
+//             int y = 10;
+//             int sum = x + y;
+//             System.Console.WriteLine($"Сумма : {sum}");
+//         }
+//     }
+// }
+// работает
+
+// // 1.3.
+// namespace 3
+// {
+//     class Program
+//     {
+//       static void Main()
+//       {
+//             System.Console.WriteLine();
+//             Console.Write("введите ширину :");
+//             double width = double.Parse(Console.ReadLine());
+
+//             Console.Write("Введите высоту :");
+//             double heigth = double.Parse(Console.ReadLine());
+
+//             double area = width * heigth;
+//             double perimeter = 2 * (width + heigth);
+
+//             Console.WriteLine($"площадь : {area} ");
+//             System.Console.WriteLine($"периметр : {perimeter}");
+
+
+
+//       }  
+//     }
+// }
+//работает
+
+//2
+// 2.1
+// простой if
+// namespace 21
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             int age = 18;
+//             if  ( age >= 18)
+//             {
+//             System.Console.WriteLine("Вы совершеннолетний");
+//             }
+//         }
+//     }
+// }
+// // работает. Пользоваетль сам вводит возрвст : 
+// namespace Secondone
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             Console.Write("введите свой возраст: ");
+//             int age = int.Parse(Console.ReadLine());
+//             if  ( age >= 18)
+//             {
+//             System.Console.WriteLine("Вы совершеннолетний");
+//             }
+//         }
+//     }
+// }
+
+// иф элс
+// using System;
+// namespace 22
+// {
+// class Program
+// {
+// static void Main()
+// {
+// int score = 85;
+// if (score >= 60)
+// {
+//     System.Console.WriteLine("зачет");
+// }
+// else
+// {
+//     System.Console.WriteLine("незачет");
+// }
+
+// }
+
+// }
+
+// }
+// работает
+
+// // множественное ветвление
+// using System;
+// namespace Secondone
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             int grade = 85;
+
+// if (grade >= 90)
+// {
+//     Console.WriteLine("Отл");
+// }
+// else if (grade >= 80)
+// {
+//     Console.WriteLine("Хор");
+// }
+// else if (grade >= 70)
+// {
+//     Console.WriteLine("Удовл");
+// }
+// else if (grade >= 60)
+// {
+//     Console.WriteLine("Поср");
+// }
+// else
+// {
+//     Console.WriteLine("Неудовл");
+// }
+//         }
+//     }
+// }
+// работает
+
+// // вложенные иф
+// using System;
+// namespace 23
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             bool hasLicense = true;
+//             bool hasCar = false;
+//             if (hasLicense)
+//             {
+//               if (hasCar)
+//               {
+//                 Console.WriteLine("Вы можете вести машину");
+//               }
+//               else 
+//               {
+//                 Console.WriteLine("У вас есть права, но нет машины");
+//               }
+//             }
+//             else 
+//             {
+//                 Console.WriteLine("У вас нет прав");
+//             }
+//         }
+//     }
+// }
+///работает
+
+//2.2
+// тернарный оператор компактная запись для простых условий
+// using System;
+// namespace SecondTwo
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             int age = 20;
+//             string status = age >= 18 ? "взрослый" : "ребенок";
+//             System.Console.WriteLine(status);
+//         }
+//     }
+// }
+ 
+ // более сложное выражение 
+//  using System;
+// namespace SecondTwo
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             int number = 10;
+//             string parity = number % 2 == 0 ? "четное" : "нечетное";
+//             System.Console.WriteLine($"число {number} - {parity}");
+//         }
+//     }
+// }
+// все работает
+
+//2.3 оператор swith
+// // базовый swith
+// using System;
+// namespace SecondThree
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             int dayOfWeek = 3;
+//             switch (dayOfWeek)
+//             {
+//             case 1 :
+//                 System.Console.WriteLine("пн");
+//                 break;
+//             case 2 :
+//                 System.Console.WriteLine("вт");
+//                 break;
+//             case 3 :
+//                 System.Console.WriteLine("ср");
+//                 break;
+//             case 4 :
+//                 System.Console.WriteLine("чт");
+//                 break;
+//             case 5 :
+//                 System.Console.WriteLine("пт");
+//                 break;
+//             case 6 :
+//                 System.Console.WriteLine("сб");
+//                 break;
+//             case 7 :
+//                 System.Console.WriteLine("вс");
+//                 break;
+
+//             }
+//         }
+//     }
+// }
+
+// switch на строках
+// using System;
+// namespace SecondTree
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             string color = "red";
+// switch (color.ToLower()) //чтобы код сработал даже если написать RED bkb BlUe - все букввы станут строчными
+// {
+//     case "red":
+//         Console.WriteLine("Красный");
+//         break;
+//     case "green":
+//         Console.WriteLine("Зелёный");
+//         break;
+//     case "blue":
+//         Console.WriteLine("Синий");
+//         break;
+//     default:
+//         Console.WriteLine("Неизвестный цвет");
+//         break;
+// }
+//         }
+//     }
+// }
+// работаерт
+
+//Switch с несколькими значениями
+// using System;
+// namespace SecondTree
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             char grade = 'A'; // или char.Parse(Console.ReadLine()) чтобы можно было указать оценку через терминал
+// switch (grade)
+// {
+//     case 'A':
+//     case 'B':
+//         Console.WriteLine("Хороший результат");
+//         break;
+//     case 'C':
+//         Console.WriteLine("Средний результат");
+//         break;
+//     case 'D':
+//     case 'F':
+//         Console.WriteLine("Низкий результат");
+//         break;
+//     default:
+//         Console.WriteLine("Неизвестная оценка");
+//         break;
+// }
+//         }
+//     }
+// }
+// код работаерт
+
+//Switch expression
+// using System;
+// namespace SecondThree
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             int day = 3;
+//             string dayName = day switch
+//             {
+//                 1 => "пн",
+//                 2 => "вт",
+//                 3 => "ср",
+//                 4 => "чт",
+//                 5 => "пт",
+//                 6 => "сб",
+//                 7 => "вс",
+//                 _ => "нет такого дня недели"
+//             }; // помнить в таких ситуациях ставить ; уже после закрытия скобки
+//             System.Console.WriteLine(dayName);
+
+            
+//         }
+//     }
+// }
+// работает 
+
+//2.4
+// Калькулятор с ветвлением
+// using System;
+// namespace SecondFour
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             System.Console.Write("введите первое число :");
+//             double num1 = double.Parse(Console.ReadLine());
+//             System.Console.Write("введите второе число :");
+//             double num2 = double.Parse(Console.ReadLine());
+//             System.Console.Write("выберите операцию (+, -, *, /): ");
+//             string operation = Console.ReadLine();
+//             double result = 0;
+//             switch (operation)
+//             {
+//                 case "+":
+//                 result = num1 + num2;
+//                 System.Console.WriteLine($"{num1} + {num2} = {result}");
+//                 break;
+//                 case "-":
+//                 result = num1 - num2;
+//                 System.Console.WriteLine($"{num1} - {num2} = {result}");
+//                 break;
+//                 case "*":
+//                 result = num1 * num2;
+//                 System.Console.WriteLine($"{num1} * {num2} = {result}");
+//                 break;
+//                 case "/":
+//                 if (num2 != 0)
+//                 {
+//                     result = num1/num2;
+//                     System.Console.WriteLine($"{num1} / {num2} = {result}");
+//                 }
+//                 else 
+//                 {
+//                     System.Console.WriteLine("на ноль не делим");
+//                 }
+//                 break;
+//                 default :
+//                 System.Console.WriteLine("неверная операция");
+//                 break;
+//             }
+//         }
+//     }
+// }
+//работает
+
+// ЧАСТЬ 3 циклы loops
+// цикл while Выполняется, пока условие истинно.
+// Простой счетчик
+// using System;
+// namespace ThirdOne
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//         int counter = 0;
+//         while (counter < 5)
+//         {
+//             System.Console.WriteLine($"итерация {counter + 1}");
+//             counter++;
+//         }
+//         int n = 10;
+//         int sum = 0;
+//         int i = 1;
+//         while (i<=n)
+//         {
+//             sum += i;
+//             i++;
+//         }
+//         System.Console.WriteLine($"сумма от 1 до {n} = {sum}");
+
+//         }
+//     }
+// }
+// вывод :
+// итерация 1
+// итерация 2
+// итерация 3
+// итерация 4
+// итерация 5
+// сумма от 1 до 10 = 55
+
+// бесконечный цикл
+// using System;
+// namespace ThirdOne
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//         while (true)
+// {
+//     Console.Write("Введите число (0 для выхода): ");
+//     int number = int.Parse(Console.ReadLine());
+    
+//     if (number == 0)
+//     {
+//         Console.WriteLine("Выход...");
+//         break;
+//     }
+//     Console.WriteLine($"Вы ввели: {number}");
+// }
+
+//          }
+//      }
+// }
+// работает
+
+//Цикл do-while
+// using System;
+// namespace ThirdTwo
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             string password;
+// do
+// {
+//     Console.Write("Введите пароль: ");
+//     password = Console.ReadLine();
+    
+//     if (password != "12345")
+//     {
+//         Console.WriteLine("Неверный пароль, попробуйте снова");
+//     }
+// } while (password != "12345");
+
+// Console.WriteLine("Доступ разрешён!");
+
+// // Игра "Угадай число"
+// Random rand = new Random();
+// int secretNumber = rand.Next(1, 101);
+// int guess;
+// int attempts = 0;
+
+// do
+// {
+//     Console.Write("Угадайте число (1-100): ");
+//     guess = int.Parse(Console.ReadLine());
+//     attempts++;
+    
+//     if (guess < secretNumber)
+//     {
+//         Console.WriteLine("Загаданное число больше");
+//     }
+//     else if (guess > secretNumber)
+//     {
+//         Console.WriteLine("Загаданное число меньше");
+//     }
+// } while (guess != secretNumber);
+
+// Console.WriteLine($"Поздравляю! Вы угадали за {attempts} попыток!");
+
+//         }
+//     }
+// }
+// работает
+
+//3.3. Цикл for используется когда известно кол-во
+// using System;
+// namespace ThirdThree
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             for (int i = 0; i < 5; i++)
+//             {
+//                 Console.WriteLine($"Итерация {i + 1}");
+//             }
+// 
+//             // Вывод чисел от 1 до 10
+//             for (int i = 1; i <= 10; i++)
+//             {
+//                 Console.Write($"{i} ");
+//             }
+//             Console.WriteLine();
+//
+//             // Вывод в обратном порядке
+//             for (int i = 10; i >= 1; i--)
+//             {
+//                 Console.Write($"{i} ");
+//             }
+//             Console.WriteLine();
+// 
+//             // С шагом 2
+//             for (int i = 0; i <= 10; i += 2)
+//             {
+//                 Console.Write($"{i} ");
+//             }
+//             Console.WriteLine(); // 0 2 4 6 8 10
+//         }
+//     }
+// }
+// работает
+
+// Сложные выражения в for
+// using System;
+// namespace ThirdThree
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Несколько переменных
+//             for (int i = 0, j = 10; i < j; i++, j--)
+//             {
+//                 Console.WriteLine($"i = {i}, j = {j}");
+//             }
+// 
+//             // Бесконечный for (с break)
+//             for (;;)
+//             {
+//                 Console.Write("Введите число (0 для выхода): ");
+//                 int num = int.Parse(Console.ReadLine());
+//                 if (num == 0) break;
+//                 Console.WriteLine($"Квадрат: {num * num}");
+//             }
+//         }
+//     }
+// }
+// работает
+
+// 3.4. Цикл foreach
+// Для перебора коллекций (массивы, списки и т.д.).
+// using System;
+// namespace ThirdFour
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Массив чисел
+//             int[] numbers = { 10, 20, 30, 40, 50 };
+//
+//             foreach (int num in numbers)
+//             {
+//                 Console.WriteLine(num);
+//             }
+//
+//             // Массив строк
+//             string[] fruits = { "Apple", "Banana", "Orange", "Grape" };
+//
+//             foreach (string fruit in fruits)
+//             {
+//                 Console.WriteLine($"Фрукт: {fruit}");
+//             }
+//
+//             // Изменять элементы нельзя, только читать
+//             foreach (int num in numbers)
+//             {
+//                 // num = 100; // Ошибка! Нельзя изменять
+//                 Console.WriteLine(num);
+//             }
+//         }
+//     }
+// }
+// работает
+
+// 3.5. Вложенные циклы
+// using System;
+// namespace ThirdFive
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Таблица умножения
+//             for (int i = 1; i <= 9; i++)
+//             {
+//                 for (int j = 1; j <= 9; j++)
+//                 {
+//                     Console.Write($"{i * j,4}");
+//                 }
+//                 Console.WriteLine();
+//             }
+//
+//             // Вывод треугольника из звездочек
+//             int height = 5;
+//             for (int i = 1; i <= height; i++)
+//             {
+//                 for (int j = 1; j <= i; j++)
+//                 {
+//                     Console.Write("*");
+//                 }
+//                 Console.WriteLine();
+//             }
+//
+//             // Ромб из звездочек
+//             int size = 5;
+//             for (int i = 1; i <= size; i++)
+//             {
+//                 for (int j = 1; j <= size - i; j++)
+//                     Console.Write(" ");
+//                 for (int j = 1; j <= 2 * i - 1; j++)
+//                     Console.Write("*");
+//                 Console.WriteLine();
+//             }
+//             for (int i = size - 1; i >= 1; i--)
+//             {
+//                 for (int j = 1; j <= size - i; j++)
+//                     Console.Write(" ");
+//                 for (int j = 1; j <= 2 * i - 1; j++)
+//                     Console.Write("*");
+//                 Console.WriteLine();
+//             }
+//         }
+//     }
+// }
+// работает
+
+// ЧАСТЬ 4: Управление потоком выполнения
+// 4.1. Оператор break
+// Прерывает выполнение цикла или оператора switch.
+// using System;
+// namespace FourthOne
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Поиск первого четного числа
+//             int[] numbers = { 1, 3, 5, 7, 8, 9, 10 };
+//
+//             foreach (int num in numbers)
+//             {
+//                 if (num % 2 == 0)
+//                 {
+//                     Console.WriteLine($"Первое четное число: {num}");
+//                     break; // Выход из цикла
+//                 }
+//             }
+// 
+//             // Выход из вложенных циклов
+//             for (int i = 0; i < 5; i++)
+//             {
+//                 for (int j = 0; j < 5; j++)
+//                 {
+//                     if (i == 2 && j == 2)
+//                     {
+//                         Console.WriteLine("Выход из внутреннего цикла");
+//                         break; // Выход только из внутреннего цикла
+//                     }
+//                     Console.WriteLine($"i = {i}, j = {j}");
+//                 }
+//             }
+//         }
+//     }
+// }
+// работает
+
+// 4.2. Оператор continue
+// Пропускает текущую итерацию и переходит к следующей.
+// using System;
+// namespace FourthTwo
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Вывод только четных чисел
+//             for (int i = 1; i <= 10; i++)
+//             {
+//                 if (i % 2 != 0)
+//                 {
+//                     continue; // Пропускаем нечетные
+//                 }
+//                 Console.Write($"{i} ");
+//             }
+//             Console.WriteLine(); // 2 4 6 8 10
+// 
+//             // Пропуск чисел, кратных 3
+//             for (int i = 1; i <= 20; i++)
+//             {
+//                 if (i % 3 == 0)
+//                     continue;
+//                 Console.Write($"{i} ");
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+// работает
+
+// 4.3. Оператор return
+// Выход из метода с возвратом значения.
+// using System;
+// namespace FourthThree
+// {
+//     class Program
+//     {
+//         static int FindFirstPositive(int[] numbers)
+//         {
+//             foreach (int num in numbers)
+//             {
+//                 if (num > 0)
+//                 {
+//                     return num; // Возвращаем первое положительное число
+//                 }
+//             }
+//             return -1; // Положительных чисел нет
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование
+//             int[] arr = { -1, -3, 5, 7, -2 };
+//             int result = FindFirstPositive(arr);
+//             Console.WriteLine($"Первое положительное: {result}"); // 5
+//         }
+//     }
+// }
+// работает
+
+// 4.4. Оператор goto (редко используется)
+// Примечание: goto считается плохой практикой в большинстве случаев. Используйте его только когда это действительно необходимо.
+// using System;
+// namespace FourthFour
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Использование goto для выхода из вложенных циклов
+//             for (int i = 0; i < 5; i++)
+//             {
+//                 for (int j = 0; j < 5; j++)
+//                 {
+//                     if (i == 2 && j == 2)
+//                     {
+//                         Console.WriteLine("Выход из всех циклов");
+//                         goto ExitLoops;
+//                     }
+//                     Console.WriteLine($"i = {i}, j = {j}");
+//                 }
+//             }
+//         ExitLoops:
+//             Console.WriteLine("Продолжение программы");
+//         }
+//     }
+// }
+// работает
+
+// ЧАСТЬ 5: Комбинирование конструкций
+// 5.1. Ветвление внутри цикла
+// using System;
+// namespace FifthOne
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Поиск всех четных чисел в массиве
+//             int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//
+//             Console.WriteLine("Четные числа:");
+//             foreach (int num in numbers)
+//             {
+//                 if (num % 2 == 0) // Ветвление внутри цикла
+//                 {
+//                     Console.Write($"{num} ");
+//                 }
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+// работает
+
+// 5.2. Цикл внутри ветвления
+// using System;
+// namespace FifthTwo
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             // Выбор операции и её выполнение
+//             Console.Write("Выберите операцию (1-сумма, 2-факториал): ");
+//             int choice = int.Parse(Console.ReadLine());
+//
+//             if (choice == 1)
+//             {
+//                 // Цикл для суммы
+//                 int sum = 0;
+//                 for (int i = 1; i <= 10; i++)
+//                 {
+//                     sum += i;
+//                 }
+//                 Console.WriteLine($"Сумма от 1 до 10: {sum}");
+//             }
+//             else if (choice == 2)
+//             {
+//                 // Цикл для факториала
+//                 int factorial = 1;
+//                 for (int i = 1; i <= 5; i++)
+//                 {
+//                     factorial *= i;
+//                 }
+//                 Console.WriteLine($"5! = {factorial}");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Неверный выбор");
+//             }
+//         }
+//     }
+// }
+// работает
+
+// 5.3. Сложный пример: Проверка числа на простоту
+// using System;
+// namespace FifthThree
+// {
+//     class Program
+//     {
+//         static void Main()
+//         {
+//             Console.Write("Введите число для проверки: ");
+//             int number = int.Parse(Console.ReadLine());
+//
+//             if (number < 2)
+//             {
+//                 Console.WriteLine("Число должно быть больше 1");
+//             }
+//             else
+//             {
+//                 bool isPrime = true;
+//
+//                 // Проверка делителей от 2 до корня из числа
+//                 for (int i = 2; i <= Math.Sqrt(number); i++)
+//                 {
+//                     if (number % i == 0)
+//                     {
+//                         isPrime = false;
+//                         break;
+//                     }
+//                 }
+//
+//                 if (isPrime)
+//                 {
+//                     Console.WriteLine($"{number} - простое число");
+//                 }
+//                 else
+//                 {
+//                     Console.WriteLine($"{number} - составное число");
+//                 }
+//             }
+//         }
+//     }
+// }
+// работает
+
+// ЧАСТЬ 6: Практические алгоритмы
+// 6.1. Сумма цифр числа
+// using System;
+// namespace SixthOne
+// {
+//     class Program
+//     {
+//         static int SumOfDigits(int number)
+//         {
+//             // Работаем с абсолютным значением
+//             number = Math.Abs(number);
+//             int sum = 0;
+//
+//             while (number > 0)
+//             {
+//                 sum += number % 10; // Берем последнюю цифру
+//                 number /= 10;      // Удаляем последнюю цифру
+//             }
+//
+//             return sum;
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование
+//             int num = 12345;
+//             Console.WriteLine($"Сумма цифр числа {num} = {SumOfDigits(num)}"); // 15
+//         }
+//     }
+// }
+// работает
+
+// 6.2. Разворот числа
+// using System;
+// namespace SixthTwo
+// {
+//     class Program
+//     {
+//         static int ReverseNumber(int number)
+//         {
+//             int reversed = 0;
+//
+//             while (number != 0)
+//             {
+//                 int digit = number % 10;
+//                 reversed = reversed * 10 + digit;
+//                 number /= 10;
+//             }
+//
+//             return reversed;
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование
+//             int num = 12345;
+//             Console.WriteLine($"Разворот числа {num} = {ReverseNumber(num)}"); // 54321
+//         }
+//     }
+// }
+// работает
+
+// 6.3. Поиск НОД (алгоритм Евклида)
+// using System;
+// namespace SixthThree
+// {
+//     class Program
+//     {
+//         static int GCD(int a, int b)
+//         {
+//             a = Math.Abs(a);
+//             b = Math.Abs(b);
+//
+//             while (b != 0)
+//             {
+//                 int remainder = a % b;
+//                 a = b;
+//                 b = remainder;
+//             }
+//
+//             return a;
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование
+//             int num1 = 48, num2 = 18;
+//             Console.WriteLine($"НОД({num1}, {num2}) = {GCD(num1, num2)}"); // 6
+//         }
+//     }
+// }
+// работает
+
+// 6.4. Числа Фибоначчи
+// using System;
+// namespace SixthFour
+// {
+//     class Program
+//     {
+//         static void PrintFibonacci(int count)
+//         {
+//             if (count <= 0) return;
+//
+//             long a = 0, b = 1;
+//
+//             Console.Write("Числа Фибоначчи: ");
+//             for (int i = 0; i < count; i++)
+//             {
+//                 Console.Write($"{a} ");
+//                 long next = a + b;
+//                 a = b;
+//                 b = next;
+//             }
+//             Console.WriteLine();
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование
+//             PrintFibonacci(15); // 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+//         }
+//     }
+// }
+// работает
+
+// 6.5. Пузырьковая сортировка
+// using System;
+// namespace SixthFive
+// {
+//     class Program
+//     {
+//         static void BubbleSort(int[] array)
+//         {
+//             int n = array.Length;
+//
+//             for (int i = 0; i < n - 1; i++)
+//             {
+//                 bool swapped = false;
+//
+//                 for (int j = 0; j < n - 1 - i; j++)
+//                 {
+//                     if (array[j] > array[j + 1])
+//                     {
+//                         // Меняем местами
+//                         int temp = array[j];
+//                         array[j] = array[j + 1];
+//                         array[j + 1] = temp;
+//                         swapped = true;
+//                     }
+//                 }
+//
+//                 // Если не было обменов, массив отсортирован
+//                 if (!swapped) break;
+//             }
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование
+//             int[] numbers = { 64, 34, 25, 12, 22, 11, 90 };
+//             Console.WriteLine("Исходный массив: " + string.Join(", ", numbers));
+//
+//             BubbleSort(numbers);
+//             Console.WriteLine("Отсортированный массив: " + string.Join(", ", numbers));
+//         }
+//     }
+// }
+// работает
+
+// 6.6. Бинарный поиск
+// using System;
+// namespace SixthSix
+// {
+//     class Program
+//     {
+//         static int BinarySearch(int[] array, int target)
+//         {
+//             int left = 0;
+//             int right = array.Length - 1;
+//
+//             while (left <= right)
+//             {
+//                 int mid = left + (right - left) / 2;
+//
+//                 if (array[mid] == target)
+//                     return mid;
+//
+//                 if (array[mid] < target)
+//                     left = mid + 1;
+//                 else
+//                     right = mid - 1;
+//             }
+//
+//             return -1; // Элемент не найден
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование (массив должен быть отсортирован)
+//             int[] sortedArray = { 1, 3, 5, 7, 9, 11, 13, 15 };
+//             int target = 7;
+//
+//             int index = BinarySearch(sortedArray, target);
+//             Console.WriteLine($"Индекс элемента {target}: {index}"); // 3
+//         }
+//     }
+// }
+// работает
+
+// ЧАСТЬ 7: Обработка исключений в алгоритмах
+// 7.1. Безопасный ввод чисел
+// using System;
+// namespace SeventhOne
+// {
+//     class Program
+//     {
+//         static int GetPositiveNumber(string prompt)
+//         {
+//             int number;
+//             bool isValid;
+//
+//             do
+//             {
+//                 Console.Write(prompt);
+//                 string input = Console.ReadLine();
+//
+//                 // Проверка на null и пробелы
+//                 if (string.IsNullOrWhiteSpace(input))
+//                 {
+//                     Console.WriteLine("Ввод не может быть пустым");
+//                     isValid = false;
+//                     continue;
+//                 }
+//
+//                 // Попытка преобразования
+//                 isValid = int.TryParse(input, out number);
+//
+//                 if (!isValid)
+//                 {
+//                     Console.WriteLine("Введите целое число");
+//                 }
+//                 else if (number <= 0)
+//                 {
+//                     Console.WriteLine("Число должно быть положительным");
+//                     isValid = false;
+//                 }
+//
+//             } while (!isValid);
+//
+//             return number;
+//         }
+//
+//         static void Main()
+//         {
+//             // Использование
+//             int age = GetPositiveNumber("Введите возраст: ");
+//             Console.WriteLine($"Возраст: {age}");
+//         }
+//     }
+// }
+// работает
+
+// 7.2. Обработка ошибок в алгоритмах
+// using System;
+// namespace SeventhTwo
+// {
+//     class Program
+//     {
+//         static double SafeDivision(double a, double b)
+//         {
+//             try
+//             {
+//                 if (b == 0)
+//                     throw new DivideByZeroException("Деление на ноль!");
+//                 return a / b;
+//             }
+//             catch (DivideByZeroException ex)
+//             {
+//                 Console.WriteLine($"Ошибка: {ex.Message}");
+//                 return double.NaN; // Не число
+//             }
+//             catch (Exception ex)
+//             {
+//                 Console.WriteLine($"Неизвестная ошибка: {ex.Message}");
+//                 return double.NaN;
+//             }
+//         }
+//
+//         static void Main()
+//         {
+//             SafeDivision(10, 0);
+//         }
+//     }
+// }
+// работает
