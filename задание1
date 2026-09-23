@@ -1,0 +1,28 @@
+ using System;
+
+namespace t1
+ {
+     class Program
+     {
+         static void Main()
+         {
+             System.Console.Write("введите число: ");
+             int N = int.Parse(Console.ReadLine());
+            int j = 1;
+            int count = 0;
+            do 
+            {
+             if (j%3 == 0)
+              {
+                 count = count + j;
+                 System.Console.WriteLine(j); 
+              }   
+              j++;
+
+            } 
+           
+            while (j <= N);
+            System.Console.WriteLine(count);
+         }
+     }
+ }
