@@ -1,0 +1,73 @@
+using System;
+
+namespace з4
+{
+    class Program
+    {
+        static void Main()
+        {
+            Random rand = new Random();
+            int[] numbers = new int[20];
+
+            // заполнение массива случайными числами
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = rand.Next(1, 101);
+            }
+
+            System.Console.WriteLine("массив до сортировки:");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                System.Console.Write(numbers[i] + " ");
+            }
+            System.Console.WriteLine();
+
+            // переменные для подсчета операций сортировки выыбором
+            int comparisons = 0;
+            int swaps = 0;
+
+            // алгоритм Selection Sort
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                int minIndex = i;
+
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    comparisons++; // счет сравнение
+                    if (numbers[j] < numbers[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+
+                // если нашли элемент меньше текущего — меняем местами
+                if (minIndex != i)
+                {
+                    int temp = numbers[i];
+                    numbers[i] = numbers[minIndex];
+                    numbers[minIndex] = temp;
+                    swaps++; // считаем обмен
+                }
+            }
+
+            System.Console.WriteLine("\nМассив после Сортировки Выбором:");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                System.Console.Write(numbers[i] + " ");
+            }
+            System.Console.WriteLine();
+
+            System.Console.WriteLine($"\n[Selection Sort] Сравнений: {comparisons}, Обменов: {swaps}"); 
+
+            // Теоретический расчет для Пузырьковой сортировки (Bubble Sort) на 20 элементов:
+            // В Bubble Sort количество сравнений всегда (N * (N - 1)) / 2 = (20 * 19) / 2 = 190
+            // А обменов в худшем/среднем случае больше, потому что обмен происходит почти при каждом сравнении
+            
+            System.Console.WriteLine("\n--- СРАВНЕНИЕ С ПУЗЫРЬКОВОЙ СОРТИРОВКОЙ ---");
+            System.Console.WriteLine("1. Сравнения: У обоих алгоритмов около 190 сравнений.");
+            System.Console.WriteLine($"2. Обмены: Selection Sort сделал всего {swaps} обменов (максимум N-1 = 19).");
+            System.Console.WriteLine("   Bubble Sort делает до 190 обменов в худшем случае!");
+            System.Console.WriteLine("Вывод: Сортировка выбором намного эффективнее по количеству перемещений в памяти.");
+        }
+    }
+}
