@@ -1,0 +1,24 @@
+using System;
+
+namespace з11
+{
+    class Program
+    {
+        static void Main()
+        {
+            System.Console.Write("введите число: ");
+            int N = int.Parse(Console.ReadLine());
+            int counter = 0;
+            //  1. Инициализация  2. Условие  3. Шаг
+            for (int k = 1;k <= N;k++)
+{
+    if (k%3 == 0)
+    {
+       counter += k;
+       System.Console.WriteLine(k);
+    }
+}
+System.Console.WriteLine(counter);
+        }
+    }
+}
